@@ -62,3 +62,11 @@ async const getAll = (req, res) => {
         res.status(500).json(err)
     }
 }
+
+module.exports = {
+    getAll,
+    Search,
+    Delete,
+    Update,
+    NewCart
+}
