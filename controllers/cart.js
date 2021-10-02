@@ -1,6 +1,6 @@
 const Cart = require('../models/Cart')
 
-async const NewCart = (req, res) => {
+const NewCart = async (req, res) => {
     const newCart = new Cart(req.body)
 
     try {
@@ -13,7 +13,7 @@ async const NewCart = (req, res) => {
     }
 }
 
-async const Update = (req, res) => {
+const Update = async (req, res) => {
     try {
         const updatedCart = await Cart.findByIdAndUpdate(
             req.params.id,
@@ -31,7 +31,7 @@ async const Update = (req, res) => {
     }
 }
 
-async const Delete = (req, res) => {
+const Delete = async (req, res) => {
     try {
         await Cart.findByIdAndDelete(req.param)
     } 
@@ -41,7 +41,7 @@ async const Delete = (req, res) => {
     }
 }
 
-async const Search = (req, res) => {
+const Search = async (req, res) => {
     try {
         const Cart = Cart.find({ userId: req.params.userId })
         res.status(200).json(Cart)
@@ -52,7 +52,7 @@ async const Search = (req, res) => {
     }
 }
 
-async const getAll = (req, res) => {
+const getAll = async (req, res) => {
     try {
         const Carts = await Cart.find()
         res.status(200).json(Carts)
